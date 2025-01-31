@@ -1,7 +1,8 @@
 import random
 num = random.randint(1, 100)
 guesses = 0
-while guesses < 8:
+maxGuesses = 6
+while guesses < maxGuesses:
     guess = input("Guess: ")
     if guess.isdecimal():
         if int(guess) >= 1 and int(guess) <= 100:
@@ -10,9 +11,9 @@ while guesses < 8:
                 print("You won in " + str(guesses) + " guesses!")
                 break
             elif num < int(guess):
-                print("The number is below " + guess)
+                print("The number is below " + guess  + " (" + str(int(maxGuesses)-int(guesses)) + " guesses left)")
             elif num > int(guess):
-                print("The number is above " + guess)
+                print("The number is above " + guess  + " (" + str(int(maxGuesses)-int(guesses)) + " guesses left)")
         else:
             print("Please enter a whole number from 1-100")
     else:
