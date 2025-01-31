@@ -5,14 +5,14 @@ while guesses < 8:
     guess = input("Guess: ")
     if guess.isdecimal():
         if int(guess) >= 1 and int(guess) <= 100:
+            guesses += 1
             if num == int(guess):
-                print("You win!")
+                print("You won in " + str(guesses) + " guesses!")
                 break
             elif num < int(guess):
                 print("The number is below " + guess)
             elif num > int(guess):
                 print("The number is above " + guess)
-            guesses += 1
         else:
             print("Please enter a whole number from 1-100")
     else:
